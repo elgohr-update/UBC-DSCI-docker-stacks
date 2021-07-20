@@ -1,6 +1,6 @@
 # Copyright (c) UBC-DSCI Development Team
 # Distributed under the terms of the Modified BSD License.
-ARG BASE_CONTAINER=ubcdsci/r-dsci-100:latest
+ARG BASE_CONTAINER=ubcdsci/r-dsci-100:0.17.0
 
 FROM $BASE_CONTAINER
 
