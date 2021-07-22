@@ -37,7 +37,7 @@ RUN useradd -m -s /bin/bash -N -u 9999 jupyter
 
 USER jupyter
 
-COPY rm-merge-shortcut.py /home/jupyter/.jupyter/lab/user-settings/\@jupyterlab/shortcuts-extension/shortcuts.jupyterlab-settings
+COPY rm-merge-shortcut.py /tmp/shortcuts.jupyterlab-settings
 
 # Configure jupyter user
 ENV NB_USER=jupyter \
