@@ -30,7 +30,7 @@ RUN pip install git+https://github.com/data-8/nbgitpuller \
   && jupyter serverextension enable --sys-prefix nbgitpuller \
   && pip install jupyterlab-git \
   && pip install jupytext --upgrade \
-  && jupyter labextension install @ttimbers/text-shortcuts \
+  && jupyter labextension install @techrah/text-shortcuts \
   && jupyter lab build  
 
 RUN useradd -m -s /bin/bash -N -u 9999 jupyter
