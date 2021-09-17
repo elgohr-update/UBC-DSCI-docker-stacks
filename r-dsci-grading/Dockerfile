@@ -20,5 +20,9 @@ RUN jupyter serverextension enable --sys-prefix --py nbgrader
 # downgrade nbgrader to 5.6.1 so that feedback forms can be generated
 RUN pip install "nbconvert<6"
 
+# downgrade jupyter-client to 6.1.12 / nbclient to 0.5.3 to avoid errors with coroutines
+RUN pip install nbclient==0.5.3
+RUN pip install jupyter-client==6.1.12
+
 # switch user
 USER $NB_UID
