@@ -18,7 +18,7 @@ RUN conda install --quiet --yes -c conda-forge \
 # we can't use testthat 3.0.4 (current release) because it doesn't include the fix to make interactive tests error https://github.com/r-lib/testthat/pull/1443
 # so we will install testthat from a specific commit hash
 # old code to do 2.3.2 : RUN Rscript -e "devtools::install_version('testthat', version = '2.3.2', repos = 'http://cran.us.r-project.org')"
-RUN Rscript -e "remotes::install_github("r-lib/testthat@4fcc0c7152704c5c2049441920d78d9dfe448836")
+RUN Rscript -e "remotes::install_github('r-lib/testthat@4fcc0c7152704c5c2049441920d78d9dfe448836')"
 
 # Install the palmerpenguins dataset
 RUN Rscript -e "devtools::install_github('allisonhorst/palmerpenguins@v0.1.0')" 
