@@ -6,23 +6,24 @@ FROM $BASE_CONTAINER
 LABEL maintainer="Tiffany Timbers <tiffany.timbers@stat.ubc.ca>"
 
 # switch to root for installation
-USER root
+#USER root
 
-# install Rise slide extension
-RUN conda install --quiet --yes -c conda-forge rise
+RUN mamba install --quiet --yes "rise"
 
-# install nbgrader extension
-RUN pip install nbgrader==0.6.2
-RUN jupyter nbextension install --sys-prefix --py nbgrader --overwrite 
-RUN jupyter nbextension enable --sys-prefix --py nbgrader
-RUN jupyter serverextension enable --sys-prefix --py nbgrader
+# install nbgrader and rise extension
+RUN mamba install --quiet --yes "nbgrader=0.7.1" \
+    && jupyter nbextension install --sys-prefix --py nbgrader --overwrite \
+    && jupyter nbextension enable --sys-prefix --py nbgrader \
+    && jupyter serverextension enable --sys-prefix --py nbgrader 
+
+RUN mamba clean --all -f -y 
 
 # downgrade nbgrader to 5.6.1 so that feedback forms can be generated
-RUN pip install "nbconvert<6"
+#RUN pip install "nbconvert<6"
 
 # downgrade jupyter-client to 6.1.12 / nbclient to 0.5.3 to avoid errors with coroutines
-RUN pip install nbclient==0.5.3
-RUN pip install jupyter-client==6.1.12
+#RUN pip install nbclient==0.5.3
+#RUN pip install jupyter-client==6.1.12
 
 # switch user
-USER $NB_UID
+#USER $NB_UID
