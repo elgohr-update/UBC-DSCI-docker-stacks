@@ -7,7 +7,7 @@ LABEL maintainer="Tiffany Timbers <tiffany.timbers@gmail.com>"
 USER root
 
 # install vim
-RUN apt-get install vim
+RUN apt-get update && apt-get install -y vim
 
 USER ${NB_UID}
 
