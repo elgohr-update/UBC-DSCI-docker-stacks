@@ -32,7 +32,7 @@ jobs:
         draft: false
         prerelease: false
     - name: Publish to Registry
-      uses: elgohr/Publish-Docker-Github-Action@master
+      uses: elgohr/Publish-Docker-Github-Action@v4
       with:
         name: ubcdsci/r-dsci-100
         username: ${{ secrets.DOCKER_USERNAME }}
@@ -40,7 +40,7 @@ jobs:
         workdir: r-dsci-100
         tags: "latest,${{ steps.bump.outputs.new_tag }}"
     - name: Publish to Registry
-      uses: elgohr/Publish-Docker-Github-Action@master
+      uses: elgohr/Publish-Docker-Github-Action@v4
       with:
         name: ubcdsci/r-dsci-grading
         username: ${{ secrets.DOCKER_USERNAME }}
