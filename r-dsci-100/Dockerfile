@@ -1,7 +1,6 @@
 # Copyright (c) UBC-DSCI Development Team.
 # Distributed under the terms of the Modified BSD License.
-ARG BASE_CONTAINER=jupyter/r-notebook
-FROM $BASE_CONTAINER
+FROM jupyter/r-notebook
 
 LABEL maintainer="Tiffany Timbers <tiffany.timbers@gmail.com>"
 
