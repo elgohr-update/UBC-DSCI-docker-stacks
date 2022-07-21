@@ -1,6 +1,6 @@
-# Jupyter DSCI 100 Stacks
+## Looking for the dsci-100 images?
 
-Jupyter Docker Stacks are a set of ready-to-run [Docker images](https://hub.docker.com/u/jupyter) containing Jupyter applications and interactive computing tools for the DSCI 100 course.
+They've been moved to https://github.com/UBC-DSCI/dsci-100-infra .
 
 ## Run locally
 
